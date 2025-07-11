@@ -3,25 +3,38 @@
   "version": "0.1.0",
   "description": "Modular visual novel engine for the web",
   "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "import": "./dist/index.js",
       "types": "./dist/index.d.ts"
     }
   },
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsc"
   },
   "keywords": [
-    "visual novel",
+    "visual-novel",
     "engine",
     "javascript",
-    "typescript"
+    "typescript",
+    "web",
+    "vn"
   ],
-  "author": "Your Name",
+  "author": "Eshan Das",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Eshan276/easyvn"
+  },
+  "bugs": {
+    "url": "https://github.com/Eshan276/easyvn/issues"
+  },
+  "homepage": "https://github.com/Eshan276/easyvn#readme",
   "devDependencies": {
     "typescript": "^5.0.0"
   }
