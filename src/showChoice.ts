@@ -1,25 +1,42 @@
+import { runNextRouteIfAny } from "./router";
+
 export type Choice = [string, () => void];
 
-export function showChoice(choices: Choice[]) {
-  const container = document.getElementById("choices");
-  const speaker = document.getElementById("speaker");
-  const dialogue = document.getElementById("dialogue");
+let choiceResolver: (() => void) | null = null;
 
-  if (!container) return;
+export function showChoice(choices: Choice[]): Promise<void> {
+  return new Promise((resolve) => {
+    const container = document.getElementById("choices");
+    const speaker = document.getElementById("speaker");
+    const dialogue = document.getElementById("dialogue");
 
-  if (speaker) speaker.textContent = "Choice:";
-  if (dialogue) dialogue.textContent = "";
+    if (!container) return resolve();
 
-  container.innerHTML = "";
+    if (speaker) speaker.textContent = "Choice:";
+    if (dialogue) dialogue.textContent = "";
 
-  choices.forEach(([text, callback]) => {
-    const btn = document.createElement("button");
-    btn.textContent = text;
-    btn.className = "choice-btn";
-    btn.onclick = () => {
-      container.innerHTML = "";
-      callback();
-    };
-    container.appendChild(btn);
+    container.innerHTML = "";
+    choiceResolver = resolve;
+
+    choices.forEach(([text, callback]) => {
+      const btn = document.createElement("button");
+      btn.textContent = text;
+      btn.className = "choice-btn";
+      btn.onclick = async () => {
+        container.innerHTML = "";
+
+        const result = callback();
+        if (result instanceof Promise) await result;
+
+        await runNextRouteIfAny();
+
+        if (choiceResolver) {
+          const done = choiceResolver;
+          choiceResolver = null;
+          done(); // resume scene flow
+        }
+      };
+      container.appendChild(btn);
+    });
   });
 }
