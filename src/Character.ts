@@ -23,7 +23,7 @@ export class Character {
   appear({ orientation = "center" }: { orientation?: string } = {}) {
     this.orientation = orientation;
     const img = document.getElementById("character") as HTMLImageElement;
-    img.src = `./assets/characters/${this.sprites["smile"]}`;
+    img.src = `./assets/characters/${this.sprites[this.currentSprite]}`;
     img.style.left =
       orientation === "left" ? "10%" : orientation === "right" ? "70%" : "50%";
     img.style.transform = "translateX(-50%)";
