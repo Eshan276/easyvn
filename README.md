@@ -56,8 +56,14 @@ The engine is built with a modular architecture:
 ### Installation
 Follow the installation instructions to set up EasyVN.
 
-### Basic Usage
-Import the components you need and start building your story.
+- To download this module separately, run: `npm i easyvn`
+- To quickly set up a project, run:
+  ```bash
+  npx create-vn my-vn
+  cd my-vn
+  npm run dev
+  ```
+
 
 ---
 
