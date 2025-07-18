@@ -1,6 +1,6 @@
 {
   "name": "easyvn",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Modular visual novel engine for the web",
   "type": "module",
   "main": "./dist/index.js",
@@ -37,5 +37,8 @@
   "homepage": "https://github.com/Eshan276/easyvn#readme",
   "devDependencies": {
     "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "create-vn": "^1.0.0"
   }
 }
