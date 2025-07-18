@@ -9,6 +9,7 @@ A lightweight, modular TypeScript-based visual novel engine for creating interac
 EasyVN provides a simple yet powerful framework for building visual novels with features like character dialogue, sprite management, branching narratives, and interactive choices. Built with TypeScript for type safety and modern web standards.
 
 ---
+<img width="1920" height="875" alt="image" src="https://github.com/user-attachments/assets/eb2ac2ba-b873-4add-af73-2494d8763cd9" />
 
 ## Key Features
 
