@@ -11,6 +11,11 @@ EasyVN provides a simple yet powerful framework for building visual novels with 
 ---
 <img width="1920" height="875" alt="image" src="https://github.com/user-attachments/assets/eb2ac2ba-b873-4add-af73-2494d8763cd9" />
 
+## Website
+
+[EasyVN](https://easyvn.iameshan.tech/)
+
+
 ## Key Features
 
 ### 🎭 Character System
